@@ -1,0 +1,27 @@
+{% extends 'blogs/layout.html' %}
+
+{% block content %}
+
+<h3 class='center-align red lighten-3'> {{blog.title}} </h3>
+
+<div class="card">
+    <div class="card-content">
+        {{blog.type}}
+    </div>
+    <div class="card-content">
+        {{blog.body}}
+    </div>
+    <div class="card-action">
+        {{blog.created_at}}
+    </div>
+    <!-- <p left-margin='10px'>
+        <a href="update/{{blog.id}}">Update</a>
+    </p>
+-->
+    <p>
+        <a href="/delete/{{blog.id}}">Delete</a>
+    </p>
+</div>
+<a href="/blog_list" class="btn">Go back</a>
+ 
+{% endblock %}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title >To Do List</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> 
+<style> 
+body {
+  background-color: whitesmoke;
+}
+.a {
+  width: 300px;
+  border: 5px solid #4CAF50;;
+  padding: 5px;
+  margin: 10px;
+}
+.b {
+  text-align: center;
+  text-transform: uppercase;
+  color: #4CAF50;
+}
+.c {
+  text-align: center;
+  color: #4CAF50;
+}
+.d {
+  width: 1000px;
+   
+  padding: 5px;
+  margin: 10px;
+}
+  
+  </style>
+</head>
+<body>
+
+<div id="myDIV" class="header">
+  <h2  class='b'>Here is your To-Do List </h2>
+  <form action="" method="POST" class= 'd'>
+    {% csrf_token %}
+    <input type="text" name="title"  placeholder="Add task here...">
+    <button type="submit" class="c">Add</button>
+  </form>
+</div>
+
+<ul id="myUL">
+  {% for todo in todos reversed %}
+  <li>
+      <div class='a'>
+          
+            {{todo.title | title}}
+        <span class="align-self-end"><a  href="delete/{{todo.id}}">Delete</a></span>
+                                             
+      </div>
+    </li>
+          {% endfor %}
+</ul>
+
+</body>
+</html>

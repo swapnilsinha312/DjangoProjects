@@ -1,0 +1,14 @@
+{% extends 'blogs/layout.html'%}
+
+{% block content %}
+  <form action="" method="post">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit" href="blogs/success.html">
+    <a href="{% url 'blog_list' %}">
+        <input type="submit" value="Cancel">
+    </a>
+  </form>
+{% endblock %}

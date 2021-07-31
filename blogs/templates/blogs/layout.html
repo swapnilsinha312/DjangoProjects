@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name = "viewport" content=" width=device-width, initial-scale=1.0 ">
+    
+    <title>Document</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> 
+</head>
+
+<body style="background-image:url('/static/images/main_bg.jpg');">
+    <header class='container center-align'>
+        <h1>This is new </h1>
+        <h1> Hello! Welcome to my blogs</h1>
+    </header>
+    <div class= "container">
+        {% block content %}
+
+        {% endblock %}
+        <br>
+        <a href='/admin'>Admin Login </a>
+        <br>
+        <a href='/'>Home Page</a>
+    </div>
+</body>
+</html>

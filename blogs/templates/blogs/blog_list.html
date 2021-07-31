@@ -1,0 +1,34 @@
+{% extends 'blogs/layout.html'%}
+
+{%block content%}
+<div class="row first-info" style="background-image:url('/static/images/blog_list_back.jpg'); background-repeat: no-repeat; background-size:cover; background-position: right"> 
+   
+    <div style="background-position: center">
+    <h2>Blogs</h2>
+    {%if allBlogs %}
+    <ul style="background-position: center">
+        {% for blog in allBlogs %}
+            <li >
+                
+                <li>
+                    <h4>
+                        {{ blog.title }}
+                        <a style="font-size: 20px;" href="/blog_open/{{blog.id}}">Open</a>
+                    </h4>
+                
+                 
+            </li>
+        
+            </li>
+        {% endfor%}
+    </ul>
+    
+    {%else%}
+        <p>There are no blogs availible presently</p>
+    {% endif %}
+    <h5>
+    <a href="{% url 'blog_create' %}">Create a new blog</a>
+</h5>
+</div>
+</div>
+{% endblock %}
